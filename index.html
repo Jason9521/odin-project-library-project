@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Library</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h2 class="title">Library</h2>
+        <button class="addbook" id="addBook">
+           + Add Book
+        </button>
+    </nav>
+
+    <form class="book-data" id="bookData" action="script.js">
+        <h3 class="form-title">Enter Book Information</h3>
+        <ul class="data-inputs">
+            <li>
+                <label for="bookTitle"></label>
+                <input type="text" id="bookTitle" placeholder="Title">
+            </li>
+
+            <li>
+                <label for="bookAuthor"></label>
+                <input type="text" id="bookAuthor" placeholder="Author">
+            </li>
+
+            <li>
+                <label for="pagesRead"></label>
+                <input type="text" id="pagesRead" placeholder="Pages Read">
+            </li>
+
+            <li>
+                <label for="totalPages"></label>
+                <input type="text" id="totalPages" placeholder="Total Pages">
+            </li>
+
+            <li>
+                <label class="read-status" for="readStatus">Did you complete this book?</label>
+                <input type="checkbox" id="readStatus">
+            </li>
+
+            <li>
+                <label for="submit"></label>
+                <input class="submit" type="submit" id="submit" value="Submit Entry">
+            </li>
+
+        </ul>
+    </form>
+</body>
+</html>

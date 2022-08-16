@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --purple: #8c05a7;
+    --gray: #8b8888;
+    --white: #fff;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 0rem;
+}
+
+.title {
+    /* font-size: clamp(1rem, 2.5vw, 2rem); */
+}
+
+/* ADD BOOK */
+
+.addbook {
+    height: 2.5rem;
+    width: 12rem;
+    background-color: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* padding: 15px 30px; */
+}
+
+/* BOOK DATA FORM */
+
+.book-data {
+    height: 29rem;
+    width: 20rem;
+    margin: 6rem auto;
+    background-color: var(--purple);
+    border-radius: 20px;
+    /* visibility: hidden; */
+}
+
+.form-title {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 0;
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+.data-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    padding: 0.75rem ;
+    list-style-type: none;
+}
+
+input {
+    height: 2rem;
+    width: 18rem;
+    padding-left: 1rem;
+    border: none;
+    border-radius: 10px;
+}  
+
+::placeholder {
+    font-size: 1rem;
+}
+
+.read-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.submit {
+    height: 2.5rem;
+    width: 12rem;
+    border-radius: 30px;
+    background-color: rgb(12, 182, 12);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.submit:hover {
+    cursor: pointer;
+    height: 2.6rem;
+    width: 12.7rem;
+    background-color: rgb(6, 218, 6);
+}
