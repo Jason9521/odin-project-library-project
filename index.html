@@ -16,8 +16,13 @@
         </button>
     </nav>
 
+    <div class="library-container" id="libraryContainer"></div>
+
     <form class="book-data" id="bookData" action="script.js">
-        <h3 class="form-title">Enter Book Information</h3>
+        <div class="form-top">
+            <h3 class="form-title">Enter Book Information</h3>
+            <h2 class="close-button" id="closeButton">x</h2>
+        </div>
         <ul class="data-inputs">
             <li>
                 <label for="bookTitle"></label>
@@ -46,10 +51,11 @@
 
             <li>
                 <label for="submit"></label>
-                <input class="submit" type="submit" id="submit" value="Submit Entry">
+                <input class="submit" type="button" id="submit" value="Submit Entry">
             </li>
-
         </ul>
     </form>
+    
+    <script src="script.js"></script>
 </body>
 </html>
