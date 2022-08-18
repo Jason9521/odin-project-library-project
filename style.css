@@ -22,33 +22,64 @@ body {
     padding: 2rem 0rem;
 }
 
+.form-top {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.close-button {
+    padding-left: 3.5rem;
+    color: var(--white);
+    font-weight: 300;
+}
+
+.close-button:hover {
+    color: black;
+    cursor: pointer;
+}
+
 .title {
-    /* font-size: clamp(1rem, 2.5vw, 2rem); */
+
 }
 
 /* ADD BOOK */
 
 .addbook {
     height: 2.5rem;
-    width: 12rem;
+    width: 8rem;
     background-color: var(--purple);
     color: #fff;
     border: none;
     border-radius: 20px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    /* padding: 15px 30px; */
+}
+
+.addbook:hover {
+    cursor: pointer;
+    background-color: rgb(191, 9, 228);
+}
+
+.library-container {
+    display: grid;
+    place-items: center;
+    gap: 1rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 /* BOOK DATA FORM */
 
 .book-data {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 29rem;
-    width: 20rem;
-    margin: 6rem auto;
+    width: 23rem;
     background-color: var(--purple);
     border-radius: 20px;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .form-title {
@@ -100,7 +131,6 @@ input {
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
-    transition: 0.5s;
 }
 
 .submit:hover {
@@ -108,4 +138,34 @@ input {
     height: 2.6rem;
     width: 12.7rem;
     background-color: rgb(6, 218, 6);
+}
+
+/* CLASSES FOR JS-CREATED ELEMENTS */
+
+.library-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 14rem;
+    width: 20rem;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+.new-div-one {
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.new-div-two {
+    
+}
+
+.new-div-three {
+    
+}
+
+.new-div-four {
+    
 }
