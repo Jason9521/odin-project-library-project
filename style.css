@@ -6,19 +6,28 @@
 }
 
 :root {
-    --purple: #8c05a7;
+    /* --purple: #8c05a7;
     --gray: #8b8888;
-    --white: #fff;
+    --white: #fff; */
+
+    --light-blue: hsl(200, 50%, 50%);
+    --blue: hsl(225, 50%, 50%);
+    --indigo: hsl(250, 50%, 50%);
+    --purple: hsl(275, 50%, 50%);
+    --grey: hsl(200, 0%, 70%);
 }
 
 body {
-    background-color: var(--gray);
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.871331828442438) 50%, rgba(0,212,255,1) 100%) no-repeat;
+    min-height: 150vh;
+    max-height: 15000vh;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 2rem 0rem;
 }
 
@@ -30,8 +39,8 @@ body {
 
 .close-button {
     padding-left: 3.5rem;
-    color: var(--white);
-    font-weight: 300;
+    color: #fff;
+    font-weight: 700;
 }
 
 .close-button:hover {
@@ -40,15 +49,22 @@ body {
 }
 
 .title {
-
+    color: #fff;
+    font-size: 2rem;
+    margin-left: 5vw;
 }
+
 
 /* ADD BOOK */
 
+.navbar button {
+    margin-right: 5vw;
+}
+
 .addbook {
     height: 2.5rem;
-    width: 8rem;
-    background-color: var(--purple);
+    width: 12rem;
+    background-color: var(--light-blue);
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -58,14 +74,14 @@ body {
 
 .addbook:hover {
     cursor: pointer;
-    background-color: rgb(191, 9, 228);
+    background-color: hsl(190, 50%, 50%);
 }
 
 .library-container {
     display: grid;
     place-items: center;
     gap: 1rem 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 
 /* BOOK DATA FORM */
@@ -86,7 +102,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0.75rem 0;
-    color: var(--white);
+    color: #fff;
     font-size: 1.1rem;
     text-decoration: underline;
 }
@@ -119,7 +135,7 @@ input {
     flex-direction: column;
     align-items: center;
     padding-bottom: 1rem;
-    color: var(--white);
+    color: #fff;
     font-weight: 500;
 }
 
@@ -127,18 +143,17 @@ input {
     height: 2.5rem;
     width: 12rem;
     border-radius: 30px;
-    background-color: rgb(12, 182, 12);
-    color: var(--white);
+    background-color: var(--light-blue);
+    color: #fff;
     font-size: 1rem;
     font-weight: 600;
 }
 
 .submit:hover {
     cursor: pointer;
-    height: 2.6rem;
-    width: 12.7rem;
-    background-color: rgb(6, 218, 6);
+    background-color: hsl(190, 50%, 50%);
 }
+
 
 /* CLASSES FOR JS-CREATED ELEMENTS */
 
@@ -149,23 +164,65 @@ input {
     align-items: center;
     height: 14rem;
     width: 20rem;
-    background-color: aqua;
+    background-color: var(--light-blue);
     border-radius: 20px;
 }
 
 .new-div-one {
-    font-size: 1.4rem;
+    color: #fff;
+    font-size: 1rem;
     text-decoration: underline;
 }
 
 .new-div-two {
-    
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
 .new-div-three {
-    
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: underline;
 }
 
-.new-div-four {
-    
+.read-button {
+    height: 2rem;
+    width: 80%;
+    color: #fff;
+    background-color: rgb(12, 182, 12);
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.read-button:hover {
+    cursor: pointer;
+    background-color: rgb(6, 218, 6);
+}
+
+.new-delete {
+    height: 2rem;
+    width: 80%;
+    color: #fff;
+    background-color: rgb(12, 182, 12);
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.new-delete:hover {
+    cursor: pointer;
+}
+
+.unread-button {
+    background-color: rgb(119, 12, 12);
+}
+
+.unread-button:hover {
+    background-color: rgb(184, 21, 21)
+}
+
+.book-read {
+    background-color: rgb(12, 182, 12);
 }
