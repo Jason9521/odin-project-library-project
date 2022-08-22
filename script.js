@@ -39,11 +39,14 @@ submit.addEventListener('click', function(e) {
     let pages = pagesRead.value;
     let total = totalPages.value;
     let id = index
+    let progress
     if (readStatus.checked) {
         progress = true;
     } else {
         progress = false
     }
+
+    console.log(progress)
 
     if (title == '' ||
         author == '' ||
@@ -57,8 +60,8 @@ submit.addEventListener('click', function(e) {
     if (submitReady) {
         bookInfo = new Book(title, author, pages, total, progress, id);
         myLibrary.push(bookInfo);
-        console.log(myLibrary); // Remember to remove
         createEntry()
+        console.log(myLibrary)
         bookData.style.visibility = 'hidden'
     }
 })
@@ -81,71 +84,86 @@ function addBookToLibrary() {}
 function createEntry() {
 
     let newBook = document.createElement('div');
-    let newDiv = document.createElement('h3')
-    let newDivTwo = document.createElement('h3')
-    let newDivThree = document.createElement('h3')
-    let readButton = document.createElement('button')
-
+    let newDiv = document.createElement('h3');
+    let newDivTwo = document.createElement('h3');
+    let newDivThree = document.createElement('h3');
+    let readButton = document.createElement('button');
+    let newDelete = document.createElement('button');
+    let idNumber = index
+    
     newBook.classList.add('library-entry');
     
     // Adds newly created tags to created container
-    newBook.appendChild(newDiv)
-    newBook.appendChild(newDivTwo)
-    newBook.appendChild(newDivThree)
-    newBook.appendChild(readButton)
+    newBook.appendChild(newDiv);
+    newBook.appendChild(newDivTwo);
+    newBook.appendChild(newDivThree);
+    newBook.appendChild(readButton);
+    newBook.appendChild(newDelete);
 
     // Assigns classes to new divs
-    newDiv.classList.add('new-div-one')
-    newDivTwo.classList.add('new-div-two')
-    newDivThree.classList.add('new-div-three')
-    readButton.classList.add('read-button')
-    readButton.setAttribute("id", 'readButton' + index)
+    newDiv.classList.add('new-div-one');
+    newDivTwo.classList.add('new-div-two');
+    newDivThree.classList.add('new-div-three');
+    readButton.classList.add('read-button');
+    readButton.setAttribute("id", 'readButton' + index);
+    newDelete.classList.add('new-delete')
     
     // Adds text to newly created h3 tags
-     
      newDiv.textContent = myLibrary[index].title;
      newDivTwo.textContent = `Illustrated By: ${myLibrary[index].author}`;
-     checkProgress()
+     checkProgress();
      newDivThree.textContent = `Completed ${pagesRead.value} of ${totalPages.value} pages`;
-     isRead(newBook, readButton)
-     
-     libraryContainer.appendChild(newBook)
-     index ++
+     isRead(newBook, readButton);
+     newDelete.textContent = 'Delete'
+     libraryContainer.appendChild(newBook);
+     index++
      
      readButton.addEventListener('click', function() {
-        //  Local event listener for read/unread button
+        // Local event listener for 'mark read/unread' button
         newBook.classList.toggle('book-read')
         readButton.classList.toggle('unread-button')
 
         if (markedRead) {
-            readButton.textContent = "Mark Unread"
+            readButton.textContent = "Mark Read"
             markedRead = false
         } else {
-            readButton.textContent = "Mark Read"
+            readButton.textContent = "Mark Unread"
             pagesRead.value = 0
             markedRead = true
         }
-     })  
+     })
+     
+     newDelete.addEventListener('click', function() {
+        // Local event listener for 'delete' button
+        newBook.remove()
+        // Removes entry from myLibrary equal to the books idNumber
+        myLibrary = myLibrary.filter(book => book.id != idNumber)
+        index--
+        console.log(myLibrary)
+     })
  }
 
  function isRead(book, button) {
     // Checks whether or not book has been completed; changes styling of book entry accordingly
+    console.log(pagesRead.value)
+    console.log(totalPages.value)
     if (pagesRead.value == totalPages.value || readStatus.checked) {
-        markedRead = false
+        markedRead = true
         book.classList.add('book-read')
         button.classList.add('unread-button')
         button.textContent = "Mark Unread"
     } else {
         button.textContent = "Mark Read"
-        markedRead = true
+        markedRead = false
     }
 }
 
 function checkProgress() {
     // Checks readStatus checkbox and changes pagesRead value accordingly
     if (readStatus.checked) {
-        pagesRead = totalPages
+        pagesRead.value = totalPages.value
     }
 }
 
-// Find a way to update the value or pagesRead when readStatus is checked
+
+
