@@ -1,4 +1,5 @@
 // GLOBAL VARIABLES
+
 let body = document.querySelector('body');
 let libraryContainer = document.getElementById('libraryContainer');
 let addBook = document.getElementById('addBook');
@@ -12,7 +13,6 @@ let readStatus = document.getElementById('readStatus');
 let submit = document.getElementById('submit');
 
 let index = 0;
-
 let myLibrary = [];
 
 // EVENT LISTENERS
@@ -98,7 +98,6 @@ function createEntry() {
     newDivTwo.classList.add('new-div-two');
     newDivThree.classList.add('new-div-three');
     readButton.classList.add('read-button');
-    readButton.setAttribute("id", 'readButton' + index);
     newDelete.classList.add('new-delete');
     
     // Adds text to newly created h3 tags
@@ -132,8 +131,6 @@ function createEntry() {
             readButton.classList.add('unread-button');
             readButton.textContent = "Mark Unread";
             markedRead = true;
-    
-            
         } else {
             newBook.classList.remove('book-read');
             readButton.classList.remove('unread-button');
@@ -158,8 +155,3 @@ function checkProgress() {
         pagesRead.value = totalPages.value;
     }
 }
-
-
-// ISSUES TO FIX
-
-// Make mobile-friendly
