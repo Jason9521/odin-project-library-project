@@ -6,15 +6,11 @@
 }
 
 :root {
-    /* --purple: #8c05a7;
-    --gray: #8b8888;
-    --white: #fff; */
-
     --light-blue: hsl(200, 50%, 50%);
     --blue: hsl(225, 50%, 50%);
     --indigo: hsl(250, 50%, 50%);
     --purple: hsl(275, 50%, 50%);
-    --grey: hsl(200, 0%, 70%);
+    --grey: hsl(0, 1%, 33%);
 }
 
 body {
@@ -49,7 +45,7 @@ body {
 }
 
 .title {
-    color: #fff;
+    color: var(--light-blue);
     font-size: 2rem;
     margin-left: 5vw;
 }
@@ -80,8 +76,8 @@ body {
 .library-container {
     display: grid;
     place-items: center;
-    gap: 1rem 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1.5rem 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 }
 
 /* BOOK DATA FORM */
@@ -93,7 +89,8 @@ body {
     transform: translate(-50%, -50%);
     height: 29rem;
     width: 23rem;
-    background-color: var(--purple);
+    background: rgb(62,49,196);
+    background: linear-gradient(347deg, rgba(62,49,196,1) 5%, rgba(78,43,187,1) 28%, rgba(90,38,179,1) 78%, rgba(108,30,168,1) 100%);
     border-radius: 20px;
     visibility: hidden;
 }
@@ -163,8 +160,11 @@ input {
     justify-content: space-evenly;
     align-items: center;
     height: 14rem;
-    width: 20rem;
-    background-color: var(--light-blue);
+    width: 28rem;
+    background: rgb(15,43,126);
+    background: linear-gradient(315deg, rgba(15,43,126,1) 2%, rgba(84,110,185,1) 65%);
+    box-shadow: 5px 5px 50px -20px;
+    opacity: 0.6;
     border-radius: 20px;
 }
 
@@ -191,6 +191,7 @@ input {
     width: 80%;
     color: #fff;
     background-color: rgb(12, 182, 12);
+    opacity: 1;
     border: none;
     border-radius: 20px;
     font-weight: 700;
@@ -205,7 +206,7 @@ input {
     height: 2rem;
     width: 80%;
     color: #fff;
-    background-color: rgb(12, 182, 12);
+    background-color: var(--grey);
     border: none;
     border-radius: 20px;
     font-weight: 700;
@@ -213,6 +214,7 @@ input {
 
 .new-delete:hover {
     cursor: pointer;
+    background-color: hsl(0, 2%, 43%)
 }
 
 .unread-button {
@@ -224,5 +226,6 @@ input {
 }
 
 .book-read {
-    background-color: rgb(12, 182, 12);
+    background-color: var(--blue);
+    opacity: 1;
 }
