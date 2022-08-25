@@ -229,3 +229,67 @@ input {
     background-color: var(--blue);
     opacity: 1;
 }
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+
+    .addbook {
+        font-size: 0.8rem;
+    }
+
+    .library-container {
+        grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    }
+
+    .library-entry {
+        width: 22rem;
+    }
+
+    .new-div-one,
+    .new-div-two,
+    .new-div-three {
+        font-size: 0.75rem;
+    }
+
+    .new-delete, 
+    .read-button, 
+    .unread-button {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .addbook {
+        height: 1.4rem;
+        width: 7rem;
+        font-size: 0.6rem;
+    }
+
+    .library-container {
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+
+    .library-entry {
+        height: 10rem;
+        width:15rem;
+    }
+
+    .new-div-one,
+    .new-div-two,
+    .new-div-three {
+        font-size: 0.6rem;
+    }
+
+    .new-delete, 
+    .read-button, 
+    .unread-button {
+        height: 1.3rem;
+        font-size: 0.6rem;
+    }
+}
