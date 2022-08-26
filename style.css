@@ -234,8 +234,36 @@ input {
 
 @media only screen and (max-width: 768px) {
 
+    .close-button {
+        padding-right: 1rem;
+        font-size: 1.2rem;
+    }
+
     .addbook {
         font-size: 0.8rem;
+    }
+
+    .book-data {
+        height: 25rem;
+        width: 15rem;
+    }
+
+    .form-title {
+        padding-left: 0.9rem;
+        font-size: 0.7rem;
+    }
+
+    input {
+        height: 1.5rem;
+        width: 13rem;
+    }
+
+    ::placeholder {
+        font-size: 0.65rem;
+    }
+
+    .read-status {
+        font-size: 0.7rem;
     }
 
     .library-container {
@@ -254,9 +282,15 @@ input {
 
     .new-delete, 
     .read-button, 
-    .unread-button {
+    .unread-button,
+    .submit {
         font-size: 0.7rem;
     }
+
+    .submit {
+        height: 1.8rem;
+    }
+
 }
 
 @media only screen and (max-width: 425px) {
